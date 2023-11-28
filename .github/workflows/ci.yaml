@@ -16,8 +16,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Create tagged directory
+      run: mkdir tagged
+
     - name: Download S3 resource
-      run: aws s3 ls s3://torontoraptors-datasets/pose/tagged_data_set/20231127/20231106GSWDET_1/
+      run: aws s3 sync s3://torontoraptors-datasets/pose/tagged_data_set/20231127/20231106GSWDET_1/ tagged/
 
     - name: Run tests
       run: ./your-test-script.sh
