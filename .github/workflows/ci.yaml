@@ -17,8 +17,5 @@ jobs:
     - name: Use Secret
       run: echo "$AWS_ACCESS_KEY_ID"
 
-    - name: Download S3 resource
-      run: aws s3 sync s3://torontoraptors-datasets/pose/tagged_data_set/20231127/20231106GSWDET_1/ .
-
     - name: Run tests
       run: ./your-test-script.sh
