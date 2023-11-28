@@ -14,9 +14,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Show sec
-      run: echo "My secret value: ${{ secrets.AWS_ACCESS_KEY_ID }}"
-
     - name: Download S3 resource
       run: aws s3 sync s3://torontoraptors-datasets/pose/tagged_data_set/20231127/20231106GSWDET_1/ .
 
